@@ -1,21 +1,28 @@
-
-#let project(
+#let document-init(
   title: none, 
-  author: "六个骨头",  
+  author: "六个骨头", 
   body
 ) = {
-  // Set the document's basic properties.
   set document(author: author, title: title)
   set page(
     margin:(
-      x: 4em, y: 5em
+      x: 6em, y: 6em
     ),
     footer: [
       Powered By 
       #link("https://github.com/zrr1999/BoneDocument")[BoneDocument]
+      #h(1fr)
+      #counter(page).display(
+        "1"
+      )
     ]
   )
-  
+  set heading(level:2, numbering: "1.1.1")
+  set par(
+    // first-line-indent: 2em,
+    // TODO: add first-line-indent 
+    justify: true
+  )
   set text(
     font: (
     "Hack Nerd Font",
@@ -43,8 +50,9 @@
       ),
       weight: "bold"
     )
-    // h(-0.5em) // TODO: typst will add space before link
     it
+    // h(-0.5em) 
+    // TODO: typst will add space before link
   }
   show heading.where(
     level: 1
@@ -54,26 +62,26 @@
       size: 16pt, 
       font: "Source Han Sans CN",
     )
-    stack(
-      dir: ttb,
-      spacing: 12pt,
-      {
-        it.body
-      },
-      line(length: 100%),
-    )
-    v(8pt, weak: true)
+    set par(first-line-indent: 0pt)
+    counter(heading).display("一、")
+    it.body
+    v(14pt, weak: true)
+  }
+  show heading.where(
+    level: 2
+  ): it =>{
+    it
+    v(12pt, weak: true)
+  }
+  show heading.where(
+    level: 3
+  ): it =>{
+    it
+    v(10pt, weak: true)
   }
 
   align(center)[
-    #block(text(weight: 700, 1.75em, title))
+    #block(text(font: "Source Han Sans CN", weight: 700, 2em, title))
   ]
-  set par(justify: true)
   body
-}
-
-#let stars(num) = {
-    for _ in range(num) {
-        [\u{2B50}]
-    }
 }
