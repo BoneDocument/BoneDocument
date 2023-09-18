@@ -13,10 +13,9 @@
     header: none,
     footer: none,
   )[
-      		#set align(center + horizon)
-       		#set text(28pt, fill: white, weight: "bold")
-       		#body
-
+      #set align(center + horizon)
+      #set text(28pt, fill: white, weight: "bold")
+      #body
     ]
 }
 
