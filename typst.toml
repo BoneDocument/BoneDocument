@@ -1,7 +1,7 @@
 [package]
 name = "bone-document"
 version = "0.1.0"
-entrypoint = "lib.typ"
+entrypoint = "bone-document.typ"
 authors = ["The Typst Project Developers"]
 license = "Unlicense"
 description = "An example package."
