@@ -1,7 +1,12 @@
 [package]
 name = "bone-document"
 version = "0.1.0"
-entrypoint = "bone-document.typ"
-authors = ["The Typst Project Developers"]
+entrypoint = "lib.typ"
+authors = ["zrr1999"]
 license = "Unlicense"
-description = "An example package."
+description = "A typst template."
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
